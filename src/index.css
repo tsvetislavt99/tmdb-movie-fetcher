@@ -11,3 +11,41 @@ body {
     rgba(6, 0, 7, 1) 100%
   );
 }
+
+/*
+Animations are defined here so it's easier to reuse them on other groups of elements.
+*/
+
+.slide-out-left {
+  animation: slideOutLeft ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+    display: none !important;
+  }
+}
+
+.move-in {
+  animation: moveIn 0.3s ease-in-out;
+}
+
+@keyframes moveIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
